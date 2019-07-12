@@ -18,17 +18,11 @@ import org.springframework.core.io.FileSystemResource;
 public class Main {
     public static void main(String args[]) {
          ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-       Movie movie1 = context.getBean("movie1", Movie.class);
-        System.out.println(movie1.getActor1());
         Movie movie2 = context.getBean("movie2", Movie.class);
         System.out.println(movie2.getActor2());
-        Movie movie= context.getBean("movie", Movie.class);
-       System.out.println(movie.getActor());
-        Movie movie4= context.getBean("movie", Movie.class);
-        System.out.println(movie.getActor());
 
 
-            System.out.println(movie==movie4);
+
 
 
 

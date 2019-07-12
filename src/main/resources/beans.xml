@@ -24,16 +24,8 @@
     </bean>
 
 
-
-    <bean id="movie" class="com.stackroute.domain.Movie" scope="singleton">
-        <property name="actor" ref="actor"></property></bean>
-    <bean id="movie1" class="com.stackroute.domain.Movie" scope="singleton">
-        <property name="actor1" ref="actor1"></property></bean>
-    <bean id="movie2" class="com.stackroute.domain.Movie" scope="singleton">
-        <property name="actor2" ref="actor2"></property></bean>
-
-
-
+    <bean name="movie2" class="com.stackroute.domain.Movie" autowire="byName"></bean>
+    
 
 
 </beans>

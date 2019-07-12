@@ -4,6 +4,9 @@ public class Movie {
     Actor actor;
     Actor actor1;
     Actor actor2;
+    public Movie(){
+
+    }
     public Actor getActor2() {
         return actor2;
     }
