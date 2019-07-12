@@ -7,8 +7,8 @@ import org.springframework.beans.factory.support.BeanDefinitionReader;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.support.SimpleBeanDefinitionRegistry;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
+//import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
+//import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.StaticApplicationContext;
@@ -17,24 +17,20 @@ import org.springframework.core.io.FileSystemResource;
 
 public class Main {
     public static void main(String args[]) {
-        //using BeanFactory
-        ClassPathResource res = new ClassPathResource("beans.xml");
-        BeanFactory factory = new XmlBeanFactory(res);
-        Movie movie = factory.getBean("movie", Movie.class);
-        System.out.println(movie.display());
+         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+       Movie movie1 = context.getBean("movie1", Movie.class);
+        System.out.println(movie1.getActor1());
+        Movie movie2 = context.getBean("movie2", Movie.class);
+        System.out.println(movie2.getActor2());
+        Movie movie= context.getBean("movie", Movie.class);
+       System.out.println(movie.getActor());
+        Movie movie4= context.getBean("movie", Movie.class);
+        System.out.println(movie.getActor());
 
-        //using ApplicationContext
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie1 = context.getBean("movie", Movie.class);
-        System.out.println(movie1.display());
 
-        //using beandefinitionregistry and beandefinitionreader
-         BeanDefinitionRegistry beanDefinitionRegistry = new DefaultListableBeanFactory();
-       BeanDefinitionReader beanDefinitionReader =new XmlBeanDefinitionReader(beanDefinitionRegistry);
-       beanDefinitionReader.loadBeanDefinitions(new ClassPathResource("beans.xml"));
+            System.out.println(movie==movie4);
 
-       Movie movie2=((DefaultListableBeanFactory)beanDefinitionRegistry).getBean("movie",Movie.class);
-        System.out.println(movie2.display());
+
 
 
 
