@@ -1,28 +1,42 @@
 package com.stackroute.domain;
 
-public class Movie {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
     Actor actor;
-    Actor actor1;
-    Actor actor2;
-    public Movie(){
 
-    }
-    public Actor getActor2() {
-        return actor2;
+    public ApplicationContext getApplicationContextAware() {
+        return applicationContext;
     }
 
-    public void setActor2(Actor actor2) {
-        this.actor2 = actor2;
+    public String getBeanNameAware() {
+        return beanName;
     }
 
-    public Actor getActor1() {
-        return actor1;
+    public BeanFactory getBeanFactoryAware() {
+        return beanFactory;
     }
 
-    public void setActor1(Actor actor1) {
-        this.actor1 = actor1;
+    public ApplicationContext getApplicationContext() {
+        return applicationContext;
     }
 
+    public String getBeanName() {
+        return beanName;
+    }
+
+    public BeanFactory getBeanFactory() {
+        return beanFactory;
+    }
+
+    ApplicationContext applicationContext;
+    String beanName;
+    BeanFactory beanFactory;
 
     public void setActor(Actor actor) {
         this.actor = actor;
@@ -36,5 +50,21 @@ public class Movie {
     }
 
 
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        this.beanFactory=beanFactory;
 
+    }
+
+    @Override
+    public void setBeanName(String s) {
+        this.beanName=s;
+
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext=applicationContext;
+
+    }
 }

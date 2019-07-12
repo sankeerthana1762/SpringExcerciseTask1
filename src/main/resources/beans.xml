@@ -24,8 +24,8 @@
     </bean>
 
 
-    <bean name="movie2" class="com.stackroute.domain.Movie" autowire="byName"></bean>
-    
+    <bean name="movie" class="com.stackroute.domain.Movie" autowire="byName"></bean>
+
 
 
 </beans>
