@@ -6,10 +6,10 @@ import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-
+//using ApplicationContextAware,BeanFactoryAware,BeanNameAware
 public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
     Actor actor;
-
+//setters and getter methods
     public ApplicationContext getApplicationContextAware() {
         return applicationContext;
     }
