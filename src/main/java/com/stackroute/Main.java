@@ -17,6 +17,7 @@ import org.springframework.core.io.FileSystemResource;
 
 public class Main {
     public static void main(String args[]) {
+        //using ApplicationContext
          ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie movie2 = context.getBean("movie2", Movie.class);
         System.out.println(movie2.getActor2());
