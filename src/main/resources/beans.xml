@@ -1,30 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <bean  id= "actor" class="com.stackroute.domain.Actor">
-        <constructor-arg index="0" value="kajal"/>
-        <constructor-arg index="1" value="female"/>
-        <constructor-arg index="2" value="32"/>
-       </bean>
-
-    <bean  id= "actor1" class="com.stackroute.domain.Actor">
-        <constructor-arg index="0" value="ANUSHKA"/>
-        <constructor-arg index="1" value="female"/>
-        <constructor-arg index="2" value="35"/>
-
-    </bean>
-
-    <bean  id= "actor2" class="com.stackroute.domain.Actor">
-        <constructor-arg index="0" value="PRABHAS"/>
-        <constructor-arg index="1" value="male"/>
-        <constructor-arg index="2" value="37"/>
-
-    </bean>
+       xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
 
 
-    <bean name="movie" class="com.stackroute.domain.Movie" autowire="byName"></bean>
+    <bean id="lifeCycle" class="com.stackroute.demo.BeanLifeCycleDemo" init-method="coustomInit" destroy-method="clean" ></bean>
 
 
 
