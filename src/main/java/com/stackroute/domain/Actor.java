@@ -1,5 +1,5 @@
 package com.stackroute.domain;
-
+//Actor class with getters and constructor methods
 public class Actor {
     private String name;
     private String gender;
