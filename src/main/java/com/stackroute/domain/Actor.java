@@ -1,7 +1,7 @@
 package com.stackroute.domain;
 
 public class Actor {
-
+    //Actor class with getters,setters and constructor methods
     private String name;
     private String gender;
     private int age;
