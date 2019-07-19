@@ -4,7 +4,7 @@ public class Actor {
     private String name;
     private String gender;
     private int age;
-
+//Actor class with constructor and getter methods
 
     public Actor(String name, String gender, int age) {
         this.name = name;
