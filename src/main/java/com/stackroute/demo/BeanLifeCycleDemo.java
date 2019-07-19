@@ -6,11 +6,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class BeanLifeCycleDemo implements InitializingBean, DisposableBean {
-
+ //implementing Initialization and DisposableBean
 
 
     public  static  void main(String args []) {
-
+         //using ApplicationContext
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("BeanFile.xml");
 
         ((ClassPathXmlApplicationContext) applicationContext).registerShutdownHook();
