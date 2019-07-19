@@ -10,7 +10,7 @@ public class BeanLifeCycleDemo implements InitializingBean, DisposableBean {
 
 
     public  static  void main(String args []) {
-
+       //using Applicationcontext
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("BeanFile.xml");
 
         ((ClassPathXmlApplicationContext) applicationContext).registerShutdownHook();
