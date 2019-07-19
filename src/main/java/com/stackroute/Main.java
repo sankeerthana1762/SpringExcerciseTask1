@@ -15,11 +15,11 @@ import org.springframework.core.io.ClassPathResource;
 
 public class Main {
     public  static  void main(String args []) {
-
+        //using ApplicationContext
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
         Movie movie=(Movie)applicationContext.getBean("movie");
         System.out.println(movie.getActor());
-
+        //using BeanFactory
         XmlBeanFactory xmlBeanFactory= new XmlBeanFactory ( new ClassPathResource("beans.xml"));
         Movie movie1= (Movie)xmlBeanFactory.getBean("movie");
         System.out.println(movie.getActor());
